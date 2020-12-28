@@ -129,7 +129,7 @@ variable "response_time_critical_threshold" {
 }
 
 variable "response_time_duration" {
-  description = "The evaluation window length of the error rate condition (minutes)"
+  description = "The evaluation window length of the error rate condition (seconds)"
   type        = number
-  default     = 5
+  default     = 300
 }
