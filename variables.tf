@@ -3,10 +3,10 @@ variable "application_name" {
   type        = string
 }
 
-variable "account_id" {
-  description = "The account ID the application reports to"
-  type        = number
-}
+# variable "account_id" {
+#   description = "The account ID the application reports to"
+#   type        = number
+# }
 
 variable "policy_name" {
   description = "The name of the alert policy to manage"

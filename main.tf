@@ -31,7 +31,7 @@ resource "newrelic_nrql_alert_condition" "apdex_condition" {
   }
 
   nrql {
-    query             = "SELECT apdex(duration, t: ${var.apdex_t}) FROM Transaction WHERE appName = '${var.application_name}' AND accountId = ${var.account_id}"
+    query             = "SELECT apdex(duration, t: ${var.apdex_t}) FROM Transaction WHERE appName = '${var.application_name}'"
     evaluation_offset = 3
   }
 
@@ -62,7 +62,7 @@ resource "newrelic_nrql_alert_condition" "error_rate_condition" {
   }
 
   nrql {
-    query             = "SELECT percentage(count(*), WHERE error IS TRUE) FROM Transaction WHERE appName = '${var.application_name}' AND accountId = ${var.account_id}"
+    query             = "SELECT percentage(count(*), WHERE error IS TRUE) FROM Transaction WHERE appName = '${var.application_name}'"
     evaluation_offset = 3
   }
 
@@ -136,7 +136,7 @@ resource "newrelic_nrql_alert_condition" "response_time_condition" {
   }
 
   nrql {
-    query             = "SELECT average(duration) FROM Transaction WHERE appName = '${var.application_name}' AND accountId = ${var.account_id}"
+    query             = "SELECT average(duration) FROM Transaction WHERE appName = '${var.application_name}'"
     evaluation_offset = 3
   }
 
